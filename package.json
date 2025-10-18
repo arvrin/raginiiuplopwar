@@ -5,12 +5,12 @@
   "main": "index.html",
   "scripts": {
     "start": "serve .",
-    "build": "node build.js",
-    "build:prod": "node optimize-performance.js && node build-production.js",
-    "optimize": "node optimize-performance.js",
-    "minify": "node build-production.js",
-    "deploy": "npm run build:prod && netlify deploy --prod --dir=dist",
-    "deploy:preview": "npm run build:prod && netlify deploy --dir=dist"
+    "build": "node scripts/build.js",
+    "build:prod": "node scripts/optimize-performance.js && node scripts/build-production.js",
+    "optimize": "node scripts/optimize-performance.js",
+    "minify": "node scripts/build-production.js",
+    "deploy": "npm run build:prod && git subtree push --prefix dist origin gh-pages",
+    "deploy:netlify": "npm run build:prod && netlify deploy --prod --dir=dist"
   },
   "keywords": [
     "vastu",
