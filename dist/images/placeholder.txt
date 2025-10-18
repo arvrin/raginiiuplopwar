@@ -1,0 +1,18 @@
+Placeholder Images Needed:
+
+1. ragini-hero.jpg (400x400) - Professional portrait of Ragini for hero section
+2. ragini-about.jpg (600x800) - Full portrait for about section  
+3. hero-bg.jpg (1920x1080) - Peaceful background for hero section
+4. client-1.jpg (150x150) - Testimonial client photo
+5. client-2.jpg (150x150) - Testimonial client photo  
+6. client-3.jpg (150x150) - Testimonial client photo
+
+For now, we'll use CSS placeholders with gradients and placeholder services.
+
+Image Requirements:
+- High quality, professional photography
+- Peaceful, serene aesthetic
+- Warm natural lighting
+- Sacred/spiritual elements
+- Diverse client representation
+- Consistent style and tone

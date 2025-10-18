@@ -1,0 +1,33 @@
+{
+  "name": "innerbliss-website",
+  "version": "1.0.0",
+  "description": "InnerBliss by Raginii - Professional Vastu Consultation & Meditation Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "node build.js",
+    "build:prod": "node optimize-performance.js && node build-production.js",
+    "optimize": "node optimize-performance.js",
+    "minify": "node build-production.js",
+    "deploy": "npm run build:prod && netlify deploy --prod --dir=dist",
+    "deploy:preview": "npm run build:prod && netlify deploy --dir=dist"
+  },
+  "keywords": [
+    "vastu",
+    "meditation",
+    "mindfulness",
+    "spiritual",
+    "wellness",
+    "consultation"
+  ],
+  "author": "Raginii",
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "^7.1.1",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "serve": "^14.2.5",
+    "terser": "^5.44.0"
+  }
+}

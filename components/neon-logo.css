@@ -1,0 +1,294 @@
+/**
+ * NeonLogo Component Styles
+ * Professional neon sign effect with customizable intensity
+ */
+
+.neon-logo {
+    font-family: var(--neon-font, 'Raleway'), sans-serif;
+    font-size: var(--neon-font-size, 2.4rem);
+    font-weight: var(--neon-font-weight, 300);
+    color: var(--neon-color, #e8b4b8);
+    letter-spacing: var(--neon-letter-spacing, 3px);
+    opacity: 0.85;
+    text-shadow: 0 0 12px rgba(232, 180, 184, 0.5);
+    transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    user-select: none;
+    display: inline-block;
+    cursor: default;
+}
+
+/* Static version for reduced motion */
+.neon-logo.neon-static {
+    opacity: 0.9;
+    text-shadow: 0 0 15px rgba(232, 180, 184, 0.7);
+}
+
+/* =============================================================================
+   FLICKER STATES - Authentic Neon Sign Behavior
+   ============================================================================= */
+
+.neon-logo.flicker-dim {
+    opacity: 0.3;
+    text-shadow: 0 0 3px rgba(232, 180, 184, 0.3);
+    transform: scale(0.998);
+}
+
+.neon-logo.flicker-off {
+    opacity: 0.12;
+    text-shadow: 0 0 1px rgba(232, 180, 184, 0.1);
+    transform: scale(0.999);
+}
+
+.neon-logo.flicker-weak {
+    opacity: 0.6;
+    text-shadow: 0 0 6px rgba(232, 180, 184, 0.4);
+    transform: scale(0.9995);
+}
+
+/* =============================================================================
+   ELECTRIC SURGE STATES - Progressive Intensity
+   ============================================================================= */
+
+.neon-logo.electric-surge-1 {
+    opacity: 1;
+    text-shadow:
+        0 0 15px rgba(232, 180, 184, 0.9),
+        0 0 25px rgba(232, 180, 184, 0.7),
+        0 0 35px rgba(232, 180, 184, 0.5);
+    transform: scale(1.002);
+}
+
+.neon-logo.electric-surge-2 {
+    opacity: 1;
+    text-shadow:
+        0 0 18px rgba(232, 180, 184, 1),
+        0 0 30px rgba(232, 180, 184, 0.8),
+        0 0 45px rgba(232, 180, 184, 0.6),
+        0 0 60px rgba(232, 180, 184, 0.3);
+    transform: scale(1.004);
+}
+
+.neon-logo.electric-surge-3 {
+    opacity: 1;
+    text-shadow:
+        0 0 20px rgba(232, 180, 184, 1),
+        0 0 35px rgba(232, 180, 184, 0.9),
+        0 0 50px rgba(232, 180, 184, 0.7),
+        0 0 70px rgba(232, 180, 184, 0.4);
+    transform: scale(1.006);
+}
+
+/* =============================================================================
+   INTENSITY VARIATIONS
+   ============================================================================= */
+
+/* High intensity mode */
+.neon-logo.intensity-high.electric-surge-3 {
+    text-shadow:
+        0 0 25px rgba(232, 180, 184, 1),
+        0 0 45px rgba(232, 180, 184, 0.9),
+        0 0 65px rgba(232, 180, 184, 0.7),
+        0 0 90px rgba(232, 180, 184, 0.5),
+        0 0 120px rgba(232, 180, 184, 0.2);
+    transform: scale(1.008);
+}
+
+.neon-logo.intensity-high.electric-surge-2 {
+    text-shadow:
+        0 0 22px rgba(232, 180, 184, 1),
+        0 0 40px rgba(232, 180, 184, 0.8),
+        0 0 60px rgba(232, 180, 184, 0.6),
+        0 0 80px rgba(232, 180, 184, 0.4);
+}
+
+/* Low intensity mode */
+.neon-logo.intensity-low.electric-surge-3 {
+    text-shadow:
+        0 0 12px rgba(232, 180, 184, 0.8),
+        0 0 20px rgba(232, 180, 184, 0.6),
+        0 0 30px rgba(232, 180, 184, 0.4);
+    transform: scale(1.003);
+}
+
+.neon-logo.intensity-low.electric-surge-2 {
+    text-shadow:
+        0 0 10px rgba(232, 180, 184, 0.7),
+        0 0 18px rgba(232, 180, 184, 0.5),
+        0 0 25px rgba(232, 180, 184, 0.3);
+}
+
+.neon-logo.intensity-low.electric-surge-1 {
+    text-shadow:
+        0 0 8px rgba(232, 180, 184, 0.6),
+        0 0 15px rgba(232, 180, 184, 0.4);
+}
+
+/* =============================================================================
+   COLOR VARIATIONS
+   ============================================================================= */
+
+/* Teal variant */
+.neon-logo.neon-teal {
+    --neon-color: #0d7377;
+}
+
+.neon-logo.neon-teal.electric-surge-1 {
+    text-shadow:
+        0 0 15px rgba(13, 115, 119, 0.9),
+        0 0 25px rgba(13, 115, 119, 0.7),
+        0 0 35px rgba(13, 115, 119, 0.5);
+}
+
+.neon-logo.neon-teal.electric-surge-2 {
+    text-shadow:
+        0 0 18px rgba(13, 115, 119, 1),
+        0 0 30px rgba(13, 115, 119, 0.8),
+        0 0 45px rgba(13, 115, 119, 0.6),
+        0 0 60px rgba(13, 115, 119, 0.3);
+}
+
+.neon-logo.neon-teal.electric-surge-3 {
+    text-shadow:
+        0 0 20px rgba(13, 115, 119, 1),
+        0 0 35px rgba(13, 115, 119, 0.9),
+        0 0 50px rgba(13, 115, 119, 0.7),
+        0 0 70px rgba(13, 115, 119, 0.4);
+}
+
+/* Gold variant */
+.neon-logo.neon-gold {
+    --neon-color: #f4d03f;
+}
+
+.neon-logo.neon-gold.electric-surge-1 {
+    text-shadow:
+        0 0 15px rgba(244, 208, 63, 0.9),
+        0 0 25px rgba(244, 208, 63, 0.7),
+        0 0 35px rgba(244, 208, 63, 0.5);
+}
+
+.neon-logo.neon-gold.electric-surge-2 {
+    text-shadow:
+        0 0 18px rgba(244, 208, 63, 1),
+        0 0 30px rgba(244, 208, 63, 0.8),
+        0 0 45px rgba(244, 208, 63, 0.6),
+        0 0 60px rgba(244, 208, 63, 0.3);
+}
+
+.neon-logo.neon-gold.electric-surge-3 {
+    text-shadow:
+        0 0 20px rgba(244, 208, 63, 1),
+        0 0 35px rgba(244, 208, 63, 0.9),
+        0 0 50px rgba(244, 208, 63, 0.7),
+        0 0 70px rgba(244, 208, 63, 0.4);
+}
+
+/* =============================================================================
+   HOVER EFFECTS (Optional Enhancement)
+   ============================================================================= */
+
+.neon-logo.hover-enabled:hover {
+    opacity: 1;
+    text-shadow:
+        0 0 15px rgba(232, 180, 184, 0.8),
+        0 0 25px rgba(232, 180, 184, 0.6),
+        0 0 35px rgba(232, 180, 184, 0.4);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    .neon-logo {
+        font-size: calc(var(--neon-font-size, 2.4rem) * 0.8);
+        letter-spacing: calc(var(--neon-letter-spacing, 3px) * 0.7);
+    }
+
+    /* Reduce glow intensity on mobile for performance */
+    .neon-logo.electric-surge-3 {
+        text-shadow:
+            0 0 15px rgba(232, 180, 184, 1),
+            0 0 25px rgba(232, 180, 184, 0.8),
+            0 0 35px rgba(232, 180, 184, 0.6);
+    }
+}
+
+@media (max-width: 480px) {
+    .neon-logo {
+        font-size: calc(var(--neon-font-size, 2.4rem) * 0.7);
+        letter-spacing: calc(var(--neon-letter-spacing, 3px) * 0.5);
+    }
+
+    /* Minimal effects on very small screens */
+    .neon-logo.electric-surge-1,
+    .neon-logo.electric-surge-2,
+    .neon-logo.electric-surge-3 {
+        text-shadow:
+            0 0 10px rgba(232, 180, 184, 0.8),
+            0 0 15px rgba(232, 180, 184, 0.6);
+        transform: scale(1.001);
+    }
+}
+
+/* =============================================================================
+   ACCESSIBILITY
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .neon-logo {
+        transition: none;
+        animation: none;
+    }
+
+    .neon-logo.flicker-dim,
+    .neon-logo.flicker-off,
+    .neon-logo.flicker-weak,
+    .neon-logo.electric-surge-1,
+    .neon-logo.electric-surge-2,
+    .neon-logo.electric-surge-3 {
+        opacity: 0.9;
+        text-shadow: 0 0 15px rgba(232, 180, 184, 0.7);
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .neon-logo {
+        text-shadow: 0 0 2px currentColor;
+    }
+
+    .neon-logo.electric-surge-1,
+    .neon-logo.electric-surge-2,
+    .neon-logo.electric-surge-3 {
+        text-shadow: 0 0 4px currentColor;
+    }
+}
+
+/* =============================================================================
+   UTILITY CLASSES
+   ============================================================================= */
+
+.neon-logo-navbar {
+    --neon-font-size: 1.8rem;
+    --neon-letter-spacing: 2px;
+}
+
+.neon-logo-footer {
+    --neon-font-size: 1.6rem;
+    --neon-letter-spacing: 1.5px;
+    opacity: 0.9;
+}
+
+.neon-logo-hero {
+    --neon-font-size: 3.5rem;
+    --neon-letter-spacing: 4px;
+}
+
+.neon-logo-small {
+    --neon-font-size: 1.4rem;
+    --neon-letter-spacing: 1px;
+}

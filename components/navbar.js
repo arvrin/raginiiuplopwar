@@ -1,0 +1,250 @@
+/**
+ * Global Navbar Component - Professional Navigation
+ * Provides consistent navigation across all pages
+ */
+
+class GlobalNavbar {
+    constructor(options = {}) {
+        this.config = {
+            logoSrc: options.logoSrc || 'images/logo.jpeg',
+            logoAlt: options.logoAlt || 'Raginii Uplopwar',
+            brandText: options.brandText || 'Raginii Uplopwar',
+            activePageClass: options.activePageClass || 'active',
+            currentPage: options.currentPage || this.getCurrentPage()
+        };
+
+        this.navItems = [
+            { text: 'Home', href: '/', id: 'home' },
+            { text: 'About', href: 'about.html', id: 'about' },
+            { text: 'Services', href: 'services.html', id: 'services' },
+            { text: 'Books', href: 'books.html', id: 'books' },
+            {
+                text: 'Offerings',
+                id: 'offerings',
+                dropdown: [
+                    { text: 'Programs', href: 'programs.html', id: 'programs' },
+                    { text: 'Events', href: 'events.html', id: 'events' }
+                ]
+            },
+            { text: 'Contact', href: 'contact.html', id: 'contact' }
+        ];
+
+        this.init();
+    }
+
+    getCurrentPage() {
+        const path = window.location.pathname;
+        if (path === '/' || path.includes('index.html')) return 'home';
+        if (path.includes('about.html')) return 'about';
+        if (path.includes('services.html')) return 'services';
+        if (path.includes('books.html')) return 'books';
+        if (path.includes('programs.html')) return 'programs';
+        if (path.includes('events.html')) return 'events';
+        if (path.includes('contact.html')) return 'contact';
+        return 'home';
+    }
+
+    generateNavHTML() {
+        const navLinks = this.navItems.map(item => {
+            // Handle dropdown menus
+            if (item.dropdown) {
+                const isActive = item.dropdown.some(subItem => subItem.id === this.config.currentPage);
+                const dropdownItems = item.dropdown.map(subItem => `
+                    <a href="${subItem.href}" class="dropdown-link${subItem.id === this.config.currentPage ? ' active' : ''}">
+                        ${subItem.text}
+                    </a>
+                `).join('');
+
+                return `
+                    <li class="nav-item-dropdown">
+                        <a href="#" class="nav-link-professional${isActive ? ' active' : ''}" onclick="event.preventDefault();">
+                            ${item.text} <i class="fas fa-chevron-down" style="font-size: 0.7em; margin-left: 4px;"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            ${dropdownItems}
+                        </div>
+                    </li>
+                `;
+            }
+
+            // Regular nav items
+            return `
+                <li>
+                    <a href="${item.href}" class="nav-link-professional${item.id === this.config.currentPage ? ' active' : ''}">
+                        ${item.text}
+                    </a>
+                </li>
+            `;
+        }).join('');
+
+        return `
+            <nav class="navbar-professional" id="navbar">
+                <div class="container">
+                    <div class="nav-brand">
+                        <a href="/" class="logo-professional">
+                            <img src="${this.config.logoSrc}" alt="${this.config.logoAlt}" class="logo-img">
+                            <span class="logo-text neon-logo-navbar" data-neon-logo data-neon-intensity="low" data-neon-font-size="1.5rem" data-neon-letter-spacing="2px">
+                                ${this.config.brandText}
+                            </span>
+                        </a>
+                    </div>
+                    <div class="nav-menu-professional" id="nav-menu">
+                        <ul class="nav-list-professional">
+                            ${navLinks}
+                        </ul>
+                    </div>
+                    <div class="nav-cta">
+                        <a href="contact.html" class="neon-btn neon-btn-rose neon-btn-icon icon-book" data-neon-button data-neon-type="rose" data-neon-icon="book">
+                            Book Consultation
+                        </a>
+                        <button class="mobile-toggle" id="mobile-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        `;
+    }
+
+    init() {
+        // Find navbar placeholder or create one if it doesn't exist
+        let navbarContainer = document.querySelector('[data-navbar-placeholder]');
+        if (!navbarContainer) {
+            // If no placeholder found, insert at the beginning of body
+            navbarContainer = document.createElement('div');
+            navbarContainer.setAttribute('data-navbar-placeholder', '');
+            document.body.insertBefore(navbarContainer, document.body.firstChild);
+        }
+
+        // Insert the navbar HTML
+        navbarContainer.innerHTML = this.generateNavHTML();
+
+        // Initialize mobile menu functionality
+        this.initMobileMenu();
+
+        // Initialize neon logo if available
+        this.initNeonLogo();
+    }
+
+    initMobileMenu() {
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileToggle && navMenu) {
+            // Toggle mobile menu
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const isClickInsideNav = navMenu.contains(e.target);
+                const isClickOnToggle = mobileToggle.contains(e.target);
+
+                if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            });
+
+            // Handle dropdown toggles in mobile
+            const dropdownItems = navMenu.querySelectorAll('.nav-item-dropdown');
+            dropdownItems.forEach(dropdown => {
+                const link = dropdown.querySelector('.nav-link-professional');
+                if (link) {
+                    link.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            e.stopPropagation();
+
+                            // Close other dropdowns
+                            dropdownItems.forEach(item => {
+                                if (item !== dropdown) {
+                                    item.classList.remove('active');
+                                }
+                            });
+
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+
+            // Close mobile menu when clicking on nav links (non-dropdown)
+            const navLinks = navMenu.querySelectorAll('.nav-link-professional');
+            navLinks.forEach(link => {
+                const parentDropdown = link.closest('.nav-item-dropdown');
+                if (!parentDropdown) {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        mobileToggle.classList.remove('active');
+                    });
+                }
+            });
+
+            // Close mobile menu when clicking on dropdown links
+            const dropdownLinks = navMenu.querySelectorAll('.dropdown-link');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                });
+            });
+        }
+    }
+
+    initNeonLogo() {
+        // Wait for NeonLogo to be available and DOM to be ready
+        const initLogo = () => {
+            const logoElement = document.querySelector('.logo-text');
+            if (typeof NeonLogo !== 'undefined' && logoElement) {
+                new NeonLogo('.logo-text', {
+                    intensity: 'low',
+                    fontSize: '1.5rem',
+                    letterSpacing: '2px',
+                    flickerInterval: [8000, 15000],
+                    color: '#e8b4b8'
+                });
+            } else {
+                // Retry after a short delay if not available
+                setTimeout(initLogo, 200);
+            }
+        };
+
+        setTimeout(initLogo, 100);
+    }
+
+    updateActivePage(pageId) {
+        this.config.currentPage = pageId;
+        const navLinks = document.querySelectorAll('.nav-link-professional');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === this.navItems.find(item => item.id === pageId)?.href) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    static init(options = {}) {
+        return new GlobalNavbar(options);
+    }
+}
+
+// Auto-initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    GlobalNavbar.init();
+});
+
+// Export for module systems
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = GlobalNavbar;
+}
+
+// Global assignment for script tag usage
+if (typeof window !== 'undefined') {
+    window.GlobalNavbar = GlobalNavbar;
+}

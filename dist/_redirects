@@ -1,0 +1,20 @@
+# Netlify redirects file for multi-page website
+
+# Handle missing favicon gracefully
+/favicon.ico /images/logo.jpeg 200
+
+# Security headers and performance optimizations are handled in netlify.toml
+# This file handles URL redirects and rewrites
+
+# Clean URL routing - remove .html extensions
+/about /about.html 200
+/services /services.html 200
+/books /books.html 200
+/programs /programs.html 200
+/contact /contact.html 200
+
+# Redirect old paths to current structure (if any exist)
+/home / 301
+
+# Handle 404s gracefully - redirect to homepage
+/* /index.html 404

@@ -1,0 +1,195 @@
+/**
+ * Neon Button Component - Professional Divine Energy Buttons
+ * Brand colors: Teal (#0d7377) and Rose Gold (#e8b4b8)
+ */
+
+:root {
+    --brand-teal: #0d7377;
+    --brand-rose-gold: #e8b4b8;
+    --rose-gold-light: #f5d0d3;
+    --teal-dark: #0a5d61;
+    --white: #ffffff;
+}
+
+/* Base Neon Button Styles */
+.neon-btn {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+    min-width: 140px;
+    text-align: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    user-select: none;
+}
+
+/* Rose Gold Neon Button */
+.neon-btn-rose {
+    background: var(--brand-rose-gold);
+    color: var(--white);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 0 20px rgba(232, 180, 184, 0.4),
+        0 4px 15px rgba(232, 180, 184, 0.2);
+    animation: roseGlow 3s ease-in-out infinite alternate;
+}
+
+.neon-btn-rose:hover {
+    animation-play-state: paused;
+    background: var(--rose-gold-light);
+    box-shadow:
+        0 0 30px rgba(232, 180, 184, 0.6),
+        0 8px 25px rgba(232, 180, 184, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Teal Neon Button with Rose Gold Text */
+.neon-btn-teal {
+    background: var(--brand-teal);
+    color: var(--brand-rose-gold);
+    text-shadow: 0 0 5px rgba(232, 180, 184, 0.3);
+    box-shadow:
+        0 0 20px rgba(13, 115, 119, 0.4),
+        0 4px 15px rgba(13, 115, 119, 0.2);
+    animation: tealGlow 3s ease-in-out infinite alternate;
+}
+
+.neon-btn-teal:hover {
+    animation-play-state: paused;
+    background: var(--teal-dark);
+    box-shadow:
+        0 0 30px rgba(13, 115, 119, 0.6),
+        0 8px 25px rgba(13, 115, 119, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Glow Animations */
+@keyframes roseGlow {
+    0% {
+        box-shadow:
+            0 0 15px rgba(232, 180, 184, 0.3),
+            0 4px 15px rgba(232, 180, 184, 0.2);
+    }
+    100% {
+        box-shadow:
+            0 0 25px rgba(232, 180, 184, 0.5),
+            0 4px 15px rgba(232, 180, 184, 0.2);
+    }
+}
+
+@keyframes tealGlow {
+    0% {
+        box-shadow:
+            0 0 15px rgba(13, 115, 119, 0.3),
+            0 4px 15px rgba(13, 115, 119, 0.2);
+    }
+    100% {
+        box-shadow:
+            0 0 25px rgba(13, 115, 119, 0.5),
+            0 4px 15px rgba(13, 115, 119, 0.2);
+    }
+}
+
+/* Size Variations */
+.neon-btn-small {
+    padding: 8px 16px;
+    font-size: 0.825rem;
+    min-width: 120px;
+}
+
+.neon-btn-large {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    min-width: 160px;
+}
+
+.neon-btn-xl {
+    padding: 14px 28px;
+    font-size: 1rem;
+    min-width: 180px;
+    font-weight: 600;
+}
+
+/* Icon Support - Removed emojis for modern look */
+.neon-btn-icon::before {
+    display: none;
+}
+
+/* Focus States for Accessibility */
+.neon-btn:focus {
+    outline: 2px solid var(--brand-rose-gold);
+    outline-offset: 2px;
+}
+
+.neon-btn-teal:focus {
+    outline: 2px solid var(--brand-teal);
+}
+
+/* Active States */
+.neon-btn:active {
+    transform: translateY(0px);
+    transition: all 0.1s ease;
+}
+
+/* Disabled State */
+.neon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    animation: none;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .neon-btn {
+        min-width: 130px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    .neon-btn-large {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        min-width: 150px;
+    }
+
+    .neon-btn-xl {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+        min-width: 170px;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .neon-btn-rose,
+    .neon-btn-teal {
+        animation: none;
+    }
+
+    .neon-btn:hover {
+        transform: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .neon-btn {
+        background: transparent !important;
+        color: var(--brand-teal) !important;
+        border: 1px solid var(--brand-teal) !important;
+        box-shadow: none !important;
+        animation: none !important;
+    }
+}
