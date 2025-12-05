@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&family=Playfair+Display:wght@400;500;600;700&display=swap&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=1.5">
+    <link rel="stylesheet" href="css/styles.css?v=1.6">
     <link rel="stylesheet" href="components/neon-button.css?v=1.1">
 
     <!-- Performance & PWA -->
@@ -99,39 +99,39 @@
             </div>
 
             <!-- Expertise Areas -->
-            <div style="background: var(--gray-50); padding: var(--space-16); border-radius: var(--radius-2xl); margin-bottom: var(--space-20);">
-                <h2 style="font-family: var(--font-serif); font-size: var(--text-3xl); color: var(--primary-navy); text-align: center; margin-bottom: var(--space-12);">Areas of Expertise</h2>
+            <div class="expertise-section">
+                <h2 class="expertise-title">Areas of Expertise</h2>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
-                    <div style="background: var(--white); padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                        <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); color: var(--primary-navy); margin-bottom: var(--space-4);">🕉️ Traditional Indian Methods</h3>
-                        <ul style="list-style: none; padding: 0; color: var(--gray-600);">
-                            <li style="margin-bottom: var(--space-2);">• Vastu Shastra & Sacred Architecture</li>
-                            <li style="margin-bottom: var(--space-2);">• Vedic Astrology & Life Purpose</li>
-                            <li style="margin-bottom: var(--space-2);">• Chakra Balancing & Energy Healing</li>
-                            <li style="margin-bottom: var(--space-2);">• Ayurvedic Lifestyle Guidance</li>
+                <div class="expertise-grid">
+                    <div class="expertise-card">
+                        <h3 class="expertise-card-title">🕉️ Traditional Indian Methods</h3>
+                        <ul class="expertise-list">
+                            <li>• Vastu Shastra & Sacred Architecture</li>
+                            <li>• Vedic Astrology & Life Purpose</li>
+                            <li>• Chakra Balancing & Energy Healing</li>
+                            <li>• Ayurvedic Lifestyle Guidance</li>
                             <li>• Sanskrit Mantra & Sound Healing</li>
                         </ul>
                     </div>
 
-                    <div style="background: var(--white); padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                        <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); color: var(--primary-navy); margin-bottom: var(--space-4);">🌟 Modern Western Approaches</h3>
-                        <ul style="list-style: none; padding: 0; color: var(--gray-600);">
-                            <li style="margin-bottom: var(--space-2);">• Numerology & Life Path Analysis</li>
-                            <li style="margin-bottom: var(--space-2);">• Psychological Counseling</li>
-                            <li style="margin-bottom: var(--space-2);">• Feng Shui & Environmental Design</li>
-                            <li style="margin-bottom: var(--space-2);">• Energy Psychology</li>
+                    <div class="expertise-card">
+                        <h3 class="expertise-card-title">🌟 Modern Western Approaches</h3>
+                        <ul class="expertise-list">
+                            <li>• Numerology & Life Path Analysis</li>
+                            <li>• Psychological Counseling</li>
+                            <li>• Feng Shui & Environmental Design</li>
+                            <li>• Energy Psychology</li>
                             <li>• Therapeutic Life Coaching</li>
                         </ul>
                     </div>
 
-                    <div style="background: var(--white); padding: var(--space-6); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
-                        <h3 style="font-family: var(--font-serif); font-size: var(--text-xl); color: var(--primary-navy); margin-bottom: var(--space-4);">⚡ Integrated Solutions</h3>
-                        <ul style="list-style: none; padding: 0; color: var(--gray-600);">
-                            <li style="margin-bottom: var(--space-2);">• Complete Life Transformation</li>
-                            <li style="margin-bottom: var(--space-2);">• Business & Career Alignment</li>
-                            <li style="margin-bottom: var(--space-2);">• Relationship Harmony</li>
-                            <li style="margin-bottom: var(--space-2);">• Health & Wellness Optimization</li>
+                    <div class="expertise-card">
+                        <h3 class="expertise-card-title">⚡ Integrated Solutions</h3>
+                        <ul class="expertise-list">
+                            <li>• Complete Life Transformation</li>
+                            <li>• Business & Career Alignment</li>
+                            <li>• Relationship Harmony</li>
+                            <li>• Health & Wellness Optimization</li>
                             <li>• Spiritual Development Programs</li>
                         </ul>
                     </div>
@@ -162,5 +162,8 @@
     <script src="components/navbar.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/neon-button.js" defer></script>
+
+    <!-- Observatory Analytics -->
+    <script src="https://observatory.goodmantech.co/api/pixel/d9e4f15f" defer></script>
 </body>
 </html>

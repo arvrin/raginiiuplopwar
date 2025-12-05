@@ -108,8 +108,20 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Vastu & Space Healing",
-                        "description": "Professional Vastu consultation combined with energy clearing for harmonious living and working spaces.",
+                        "name": "Vastu Consultation",
+                        "description": "Professional Vastu consultation for harmonious living and working spaces aligned with ancient principles.",
+                        "provider": {
+                            "@type": "ProfessionalService",
+                            "name": "Raginii Uplopwar"
+                        }
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Space Healing",
+                        "description": "Energy clearing for home, office, and factory spaces to remove negative energies and create positive flow.",
                         "provider": {
                             "@type": "ProfessionalService",
                             "name": "Raginii Uplopwar"
@@ -228,12 +240,24 @@
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3 class="service-title">Vastu & Space Healing</h3>
+                    <h3 class="service-title">Vastu Consultation</h3>
                     <p class="service-description">
-                        Professional Vastu consultation combined with energy clearing for harmonious living and working spaces.
+                        Professional Vastu consultation for harmonious living and working spaces aligned with ancient principles.
+                    </p>
+                    <div class="service-price">Starting ₹25,000</div>
+                    <a href="services.html#vastu" class="service-link">Learn More</a>
+                </div>
+
+                <div class="service-card-premium">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3 class="service-title">Space Healing</h3>
+                    <p class="service-description">
+                        Energy clearing for home, office, and factory spaces to remove negative energies and create positive flow.
                     </p>
                     <div class="service-price">Starting ₹5,000</div>
-                    <a href="services.html#vastu" class="service-link">Learn More</a>
+                    <a href="services.html#space-healing" class="service-link">Learn More</a>
                 </div>
 
                 <div class="service-card-premium featured">
@@ -354,5 +378,8 @@
     <script src="components/navbar.js" defer></script>
     <script src="components/footer.js" defer></script>
     <script src="components/neon-button.js" defer></script>
+
+    <!-- Observatory Analytics -->
+    <script src="https://observatory.goodmantech.co/api/pixel/d9e4f15f" defer></script>
 </body>
 </html>

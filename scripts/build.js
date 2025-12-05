@@ -14,8 +14,8 @@ const { minify: minifyHtml } = require('html-minifier-terser');
 
 // Build configuration
 const config = {
-  sourceDir: __dirname,
-  distDir: path.join(__dirname, 'dist'),
+  sourceDir: path.join(__dirname, '..'),
+  distDir: path.join(__dirname, '..', 'dist'),
 
   // Files to process
   jsFiles: [
