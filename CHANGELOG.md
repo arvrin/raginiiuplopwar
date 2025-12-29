@@ -4,6 +4,40 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.7.0] - 2025-12-29 20:16 IST
+
+### Added
+- **Books Page - Real Book Cover Images**
+  - Added 6 actual book cover images for Raginii's published books
+  - Created `images/books/` folder with properly named image files
+  - Books added:
+    1. उम्मीद की किरण (Ray of Hope) - `ummeed-ki-kiran.jpeg`
+    2. डर को पहचानो डर को जीतो (Recognize Fear, Conquer Fear) - `dar-ko-jeeto.jpeg`
+    3. आओ बाँट लें खुशियाँ (Let's Share Happiness - Children's Poetry) - `baant-lein-khushiyaan.jpeg`
+    4. वास्तु एवं हीलिंग (Vastu and Healing) - `vastu-evam-healing.jpeg`
+    5. हार से मिला हौसला (Courage from Defeat - Children's Stories) - `haar-se-hausla.jpeg`
+    6. वास्तु और रिलेशनशिप (Vastu and Relationship) - `vastu-aur-relationship.jpeg`
+
+### Changed
+- **Books Page Updates**
+  - Replaced placeholder icons with actual book cover images
+  - Updated book titles from English to Hindi with English translations
+  - Updated book descriptions to match actual book content
+  - Image container size: 200x280px with `object-fit: cover`
+  - Enhanced shadow effect for depth
+
+### Fixed
+- **DNS Configuration**
+  - Identified DNS misconfiguration (was pointing to GitHub Pages instead of Netlify)
+  - Domain now correctly points to Netlify via A record: `75.2.60.5`
+
+### Deployment
+- **Platform**: Netlify
+- **URL**: https://raginiiuplopwar.com
+- **Books Page**: https://raginiiuplopwar.com/books.html
+
+---
+
 ## [1.6.0] - 2025-12-04
 
 ### Added
